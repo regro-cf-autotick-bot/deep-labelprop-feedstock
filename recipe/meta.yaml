@@ -1,5 +1,5 @@
 {% set name = "deep-labelprop" %}
-{% set version = "1.2.1" %}
+{% set version = "1.2.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/deep-labelprop-{{ version }}.tar.gz
-  sha256: 8618f61d61a615ffb7bc43a9bb642551ebe286d5dea4f5bcce45db772bb111bf
+  sha256: 0b371e05b464b5cba14150250a9e9ab6262fc109ef395d87ddbaae0825a4f9a2
 
 build:
   entry_points:
