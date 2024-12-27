@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/deep-labelprop-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/deep-labelprop-{{ version }}.tar.gz
   sha256: 8618f61d61a615ffb7bc43a9bb642551ebe286d5dea4f5bcce45db772bb111bf
 
 build:
@@ -14,12 +14,12 @@ build:
     - labelprop = labelprop.cli:cli
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
     - pip
-    - python >=3.8
+    - python {{ python_min }}
   run:
     - flask >=2.1.0
     - kornia >=0.6.12
@@ -28,7 +28,7 @@ requirements:
     - nibabel >=3.2.1
     - numpy
     - plotext >=4.2.0
-    - python >=3.8
+    - python >={{ python_min }}
 
 test:
   imports:
@@ -39,6 +39,7 @@ test:
     - labelprop --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/nathandecaux/labelprop
